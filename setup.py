@@ -29,7 +29,19 @@ setup(
         "Intended Audience :: Developers",
     ],
     entry_points={"console_scripts": ["uptick = uptick.cli:main"]},
-    install_requires=open("requirements.txt").readlines(),
+    install_requires=[
+        "bitshares",
+        "prettytable",
+        "click",
+        "click-datetime",
+        "termcolor",
+        "tqdm",
+        "pyyaml",
+        "pygments"
+    ],
+    dependency_links=[
+        'git+https://github.com/graphene-blockchain/python-bitshares#egg=bitshares'
+    ],
     setup_requires=["pytest-runner"],
     tests_require=["pytest"],
     include_package_data=True,
